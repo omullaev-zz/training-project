@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>RESTfulExample</context-root>
+</jboss-web>
