@@ -1,4 +1,4 @@
-package testng;
+package com.rest;
 
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
@@ -9,7 +9,7 @@ import static com.jayway.restassured.RestAssured.get;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class MessageRestServiceTest {
+public class DogServiceTest {
 
     static final String ROOT_URL = "http://localhost:8080/RESTfulExample/rest/";
 
@@ -23,7 +23,7 @@ public class MessageRestServiceTest {
         assertThat("Method printMessage does not work correct", result, equalTo("Requested message: hello"));
 
 //        Test via REST Assured framework
-        get(ROOT_URL +"message/hello").then().assertThat().body(equalTo("Requested message: hello"));
+        get(ROOT_URL +"message/hello").
+                then().assertThat().body(equalTo("Requested message: hello"));
     }
-
 }
